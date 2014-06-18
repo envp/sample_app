@@ -1,26 +1,42 @@
 require 'rails_helper'
 
-RSpec.describe PagesController, :type => :controller do
+describe "PagesController" do
 
-  describe "GET 'home'" do
+  describe "Home Page" do
     it "returns http success" do
-      get 'home'
+      visit '/pages/home'
       expect(response).to be_success
+    end
+
+    # Test for title in home page
+    it "has the correct page title" do
+      visit '/pages/home'
+      expect(page).to have_title("Sample App | Home")
+    end
+
+  end
+
+  describe "About Page" do
+    it "returns http success" do
+      visit '/pages/about'
+      expect(response).to be_success
+    end
+
+    it "has the correct page title" do
+      visit '/pages/about'
+      expect(page).to have_title("Sample App | About Us")
     end
   end
 
-  describe "GET 'about'" do
+  describe "Contacts Page" do
     it "returns http success" do
-      get 'about'
+      visit '/pages/contact'
       expect(response).to be_success
     end
-  end
 
-  describe "GET 'contact'" do
-    it "returns http success" do
-      get 'contact'
-      expect(response).to be_success
+    it "has the correct page title" do
+      visit '/pages/contact'
+      expect(page).to have_title("Sample App | Contact Us")
     end
   end
-
 end
