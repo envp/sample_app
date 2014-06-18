@@ -1,0 +1,4 @@
+--color
+# Suppressigng warnings for now
+# --warnings
+--require spec_helper
