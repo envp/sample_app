@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-describe "PagesController" do
-
+describe PagesController do
+  render_views
   describe "Home Page" do
     it "returns http success" do
       visit '/pages/home'
