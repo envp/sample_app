@@ -2,8 +2,16 @@
 <html>
 <head>
   <title><%= title %></title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <!-- Include blueprint.css for a total reset-->
+  <%= stylesheet_link_tag 'blueprint/screen', media: 'screen', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'blueprint/print', media: 'print', 'data-turbolinks-track' => true %>
+  <!-- blueprint/ie.css used only for internet explorer -->
+  <!--[if IE]>
+  <%= stylesheet_link_tag 'blueprint/ie', media: 'screen', 'data-turbolinks-track' => true %>
+  <![endif]-->
+
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>

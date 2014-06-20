@@ -12,5 +12,6 @@
 
 <div>
   <% # ::Rails::Info is the info in /rails/info/properties page %>
-  <%= ::Rails::Info.to_html.html_safe %>
+  <% # <%== is as good as <% raw  %>
+  <%== ::Rails::Info.to_html %>
 </div>
