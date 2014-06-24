@@ -1,7 +1,11 @@
 SampleApp::Application.routes.draw do
-  get "pages/home"
-  get "pages/about"
-  get "pages/contact"
+  # Named paths also work with get so match is a wrapper?
+  root 'pages#home'
+
+  get '/contact'  => 'pages#contact'
+  get '/about'    => 'pages#about'
+  get '/help'     => 'pages#help'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -42,7 +46,7 @@ SampleApp::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'

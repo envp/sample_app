@@ -21,6 +21,9 @@ section {
   background: #FFF;
 }
 
+section h1 {
+  font-size: 200%;
+}
 /* Style the links */
 a {
   color: #0AC;
