@@ -1,0 +1,21 @@
+<% # Partial for page styling related css and js files %>
+
+<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+
+<!--[if lt IE 9]>
+<%= javascript_include_tag 'html5shiv/html5shiv.min', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'html5shiv/html5shiv-print.min', 'data-turbolinks-track' => true %>
+<![endif]-->
+
+<!-- Include blueprint.css for a total reset-->
+<%= stylesheet_link_tag 'blueprint/screen', media: 'screen', 'data-turbolinks-track' => true %>
+<%= stylesheet_link_tag 'blueprint/print', media: 'print', 'data-turbolinks-track' => true %>
+<!-- blueprint/ie.css used only for internet explorer -->
+
+<!--[if lt IE 8]>
+<%= stylesheet_link_tag 'blueprint/ie', media: 'screen', 'data-turbolinks-track' => true %>
+<![endif]-->
+
+<!-- Custom stylesheets -->
+<%= stylesheet_link_tag 'custom', media: 'screen', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
