@@ -1,4 +1,5 @@
 SampleApp::Application.routes.draw do
+  get "users/new"
   # Named paths also work with get so match is a wrapper?
   root 'pages#home'
 
