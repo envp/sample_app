@@ -1,3 +1,3 @@
-# Ruby on Rails Tutorial: demo application
+# Ruby on Rails Tutorial: sample application
 
-Ruby on Rails Live Lessons demonnstration application that should do something. Made with the help of our overlord: [Tau Lover](http://michaelhartl.com/)
+Ruby on Rails Live Lessons sample application that will do a lot of stuff. Made with the help of our overlord: [Tau Lover](http://michaelhartl.com/)
