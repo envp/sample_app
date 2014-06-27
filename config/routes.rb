@@ -1,11 +1,14 @@
 SampleApp::Application.routes.draw do
-  get "users/new"
   # Named paths also work with get so match is a wrapper?
-  root 'pages#home'
 
+  # PagesController routes
+  root 'pages#home'
   get '/contact'  => 'pages#contact'
   get '/about'    => 'pages#about'
   get '/help'     => 'pages#help'
+
+  # UsersController routes
+  get '/signup'   => 'users#new'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
