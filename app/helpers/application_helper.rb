@@ -13,6 +13,6 @@ module ApplicationHelper
   # Return the site's logo as a HTML element.
   # Short and sweet
   def logo
-    image_tag('rubyLogo.gif', alt: 'Ruby on Rails Sample App', class: 'round', height: "50px")
+    image_tag('rubyLogo.png', alt: 'Ruby on Rails Sample App', class: 'round', height: "50px")
   end
 end

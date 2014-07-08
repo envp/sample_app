@@ -1,5 +1,6 @@
 SampleApp::Application.routes.draw do
   # Named paths also work with get so match is a wrapper?
+  resources :users
 
   # PagesController routes
   root 'pages#home'

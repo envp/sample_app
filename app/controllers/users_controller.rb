@@ -3,6 +3,10 @@ class UsersController < ApplicationController
     @title = "Sign up"
   end
 
+  def show
+    @user = User.find(params[:id])
+  end
+
   private
   # Strong params ftw?
   # Need a better grasp at this
