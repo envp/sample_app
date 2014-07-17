@@ -3,11 +3,17 @@ require 'rails_helper'
 describe User, :type => :model do
 
   before :each do
-    @user_data = { name: 'Example User', email: 'user@example.com' }
+    @user_data = {
+      name: 'Example User',
+      email: 'user@example.com',
+      password: 'foobar',
+      password_confirmation: 'foobar'
+
+    }
   end
 
   it "should create a new instance, given valid attributes" do
-    User.create!(name: 'Example User', email: 'user@example.com')
+    User.create!(@user_data)
   end
 
   # Empty strings provide a more realistic
@@ -63,6 +69,61 @@ describe User, :type => :model do
     upcase_usr = User.new(@user_data.merge(email: @user_data[:email].upcase))
     expect(upcase_usr).to_not be_valid
   end
+
+  describe "passwords" do
+
+    before :each do
+      @user = User.new(@user_data)
+    end
+
+    it "should have a password attribute" do
+      expect(@user).to respond_to(:password)
+    end
+
+    it "should have a password confirmation attribute" do
+      expect(@user).to respond_to(:password_confirmation)
+    end
+  end
+
+  describe "Password validations" do
+
+    it "should require a password field" do
+      expect(User.new(
+        @user_data.merge(password: "" , password_confirmation: "")
+        )).to_not be_valid
+    end
+
+    it "should require a matching password confirmation" do
+      expect(User.new(
+        @user_data.merge(password_confirmation: "invalid")
+        )).to_not be_valid
+    end
+
+    it "should reject short passwords" do
+      short_pass = "a" * 5
+      expect(User.new(
+        @user_data.merge(password: short_pass, password_confirmation: short_pass)
+        )).to_not be_valid
+    end
+
+    it "should reject long passwords" do
+      long_pass = "a" * 49
+      expect(User.new(
+        @user_data.merge(password: long_pass, password_confirmation: long_pass)
+        )).to_not be_valid
+    end
+  end
+
+  describe "Encrypted password" do
+    before :each do
+      @user = User.create!(@user_data)
+    end
+
+    it "should have an encrypted password attribute" do
+      expect(@user).to respond_to(:encrypted_password)
+    end
+  end
+
 end
 
 
