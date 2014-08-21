@@ -172,7 +172,6 @@ describe User, :type => :model do
     it "should return the matched user with the given email on match" do
       expect(User.authenticate(@user_data[:email], @user_data[:password])).to eq(@user)
     end
-
   end
 end
 
