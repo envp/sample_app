@@ -47,5 +47,10 @@ describe UsersController, :type => :controller do
       get :show, id: @user.id
       expect(response.body).to have_selector('h1 > img.gravatar', match: :prefer_exact )
     end
+
+    it "should have the right URL on the user page" do
+      get :show, id: @user.id
+      expect(response.body).to have_selector("td > a[href='#{user_path(@user.id)}']", exact: user_path(@user.id))
+    end
   end
 end
